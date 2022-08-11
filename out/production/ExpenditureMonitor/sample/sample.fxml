@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Text layoutX="193.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Monitor">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="55.0" prefHeight="595.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <StackPane fx:id="menuPane" layoutX="14.0" layoutY="47.0" prefHeight="593.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Pane fx:id="aboutPane" prefHeight="593.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text layoutX="189.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <VBox layoutX="40.0" layoutY="106.0" prefHeight="85.0" prefWidth="339.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Created by Oliver Gyuracz" wrappingWidth="338.13671875" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Used technologies: JavaFX, JDBC" wrappingWidth="338.13671875" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Used libraries: MySQL, iTextPDF" wrappingWidth="338.13671875" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Used Database technologies: Alert triggers, Google Cloud SDK" wrappingWidth="338.13671875" />
+                           </children>
+                        </VBox>
+                        <Text layoutX="39.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright @ 2022" textAlignment="CENTER" wrappingWidth="338.13671875" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="exportPane" layoutX="10.0" layoutY="10.0" prefHeight="593.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text layoutX="166.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Export to PDF">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <HBox layoutX="47.0" layoutY="74.0" prefHeight="25.0" prefWidth="329.0" spacing="20.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File name:" textAlignment="RIGHT">
+                                 <HBox.margin>
+                                    <Insets top="3.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <TextField fx:id="fileNameTextField" />
+                              <Button mnemonicParsing="false" onAction="#export" prefHeight="25.0" prefWidth="90.0" text="Export" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="exportAlertLabel" alignment="CENTER" layoutX="68.0" layoutY="115.0" prefHeight="17.0" prefWidth="288.0" textFill="RED" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="incomePane" layoutX="109.0" layoutY="97.0" prefHeight="593.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        
+                        <TableView fx:id="incomeTable" editable="true" prefHeight="440.0" prefWidth="417.0">
+                          <columns>
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="44.0" layoutY="483.0" prefHeight="105.0" prefWidth="323.0" spacing="20.0">
+                           <children>
+                              <VBox prefHeight="76.0" prefWidth="51.0" spacing="20.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account:" textAlignment="RIGHT" wrappingWidth="52.107421875" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" textAlignment="RIGHT" wrappingWidth="53.107421875" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" textAlignment="RIGHT" wrappingWidth="54.5546875" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="105.0" prefWidth="149.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="toAccountTextField" />
+                                    <TextField fx:id="toAmountTextField" />
+                                    <TextField fx:id="toCategoryTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addIncome" prefHeight="25.0" prefWidth="90.0" text="Add" />
+                                    <Button mnemonicParsing="false" onAction="#deleteIncome" prefHeight="25.0" prefWidth="90.0" text="Delete" />
+                                    <Label fx:id="alertIncomeLabel" prefHeight="28.0" prefWidth="85.0" textFill="RED" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Text layoutX="183.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incomes">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="expenditurePane" prefHeight="593.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="expenditureTable" editable="true" prefHeight="440.0" prefWidth="417.0">
+                          <columns>
+                          </columns>
+                        </TableView>
+                        <Text layoutX="169.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenditures">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <HBox layoutX="44.0" layoutY="483.0" prefHeight="105.0" prefWidth="323.0" spacing="20.0">
+                           <children>
+                              <VBox prefHeight="76.0" prefWidth="51.0" spacing="20.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account:" textAlignment="RIGHT" wrappingWidth="52.107421875" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" textAlignment="RIGHT" wrappingWidth="53.107421875" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" textAlignment="RIGHT" wrappingWidth="54.5546875" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="105.0" prefWidth="149.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="fromAccountTextField" />
+                                    <TextField fx:id="fromAmountTextField" />
+                                    <TextField fx:id="fromCategoryTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addExpenditure" prefHeight="25.0" prefWidth="90.0" text="Add" />
+                                    <Button mnemonicParsing="false" onAction="#deleteExpenditure" prefHeight="25.0" prefWidth="90.0" text="Delete" />
+                                    <Label fx:id="alertExpenditureLabel" prefHeight="28.0" prefWidth="85.0" textFill="RED" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="accountPane" prefHeight="593.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="accountTable" editable="true" prefHeight="440.0" prefWidth="417.0">
+                          <columns>
+                          </columns>
+                        </TableView>
+                        <Text layoutX="164.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank accounts">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <HBox layoutX="29.0" layoutY="493.0" prefHeight="66.0" prefWidth="355.0" spacing="20.0">
+                           <children>
+                              <VBox prefHeight="50.0" prefWidth="68.0" spacing="20.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bank:" textAlignment="RIGHT" wrappingWidth="66.341796875" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="RIGHT" wrappingWidth="67.20703125" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="bankTextField" />
+                                    <TextField fx:id="balanceTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="66.0" prefWidth="95.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addAccount" prefHeight="25.0" prefWidth="90.0" text="Add" />
+                                    <Button mnemonicParsing="false" onAction="#deleteAccount" prefHeight="25.0" prefWidth="90.0" text="Delete" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label fx:id="alertAccountLabel" alignment="CENTER" layoutX="116.0" layoutY="559.0" prefHeight="17.0" prefWidth="149.0" textAlignment="CENTER" textFill="RED" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</Pane>

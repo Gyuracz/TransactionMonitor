@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Sep 28 12:04:48 CEST 2021:
+ Derby The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) változat betöltése: a816c00e-017c-2bdd-2ee7-000005d06a40 példány
+a(z) D:\Cloud\SanDisk\Prog\My prog files\TransactionMonitor\database adatbázis-könyvtáron: sun.misc.Launcher$AppClassLoader@18b4aac2 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_181-b13
+user.dir=D:\Cloud\SanDisk\Prog\My prog files\TransactionMonitor
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Az adatbázis-osztálybetöltő elindult - derby.database.classpath=''

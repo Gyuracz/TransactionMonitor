@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TransactionMonitor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TransactionMonitor_jar</output-path>
+    <root id="archive" name="ExpenditureMonitor.jar">
+      <element id="module-output" name="ExpenditureMonitor" />
+      <element id="extracted-dir" path="C:/Program Files/Java/mysql-connector-java-8.0.28/mysql-connector-java-8.0.28.jar" path-in-jar="/" />
+      <element id="library" level="project" name="mysql-connector-java-8.0.28" />
+      <element id="extracted-dir" path="C:/Program Files/Java/itextpdf-5.5.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

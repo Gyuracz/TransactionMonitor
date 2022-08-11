@@ -1,0 +1,1 @@
+cloud_sql_proxy -instances=consummate-link-345111:us-central1:moneyappcloud=tcp:3306
